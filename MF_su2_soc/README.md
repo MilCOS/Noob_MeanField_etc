@@ -14,7 +14,7 @@ First, the triplet current order in the mean field approximation is
 
 The restricted mean-field staggered spin flux order parameter N is defined as
 
-![](https://latex.codecogs.com/gif.latex?\vec%10N_{ij}=2×N(-1)^{i_x+i_y}(\delta_{j-i,\hat x}-\delta_{j-i,\hat%10y})\hat%10z\tag1)
+![](https://latex.codecogs.com/gif.latex?\vec%10N_{ij}=2×N(-1)^{i_x+i_y}(\delta_{j-i,\hat%10x}-\delta_{j-i,\hat%10y})\hat%10z\tag1)
 
 This represents a flux phase. This phase breaks the parity, translation by one site and conjugation symmetry.
 ### 1. Order parameter against interaction strength
@@ -30,13 +30,13 @@ The order parameter M is defined in the way,
 
 and for the mean field order parameter, I chose
 
-![](https://latex.codecogs.com/gif.latex?M_{ij}=M(\delta_{j-i,\hat x}+\delta_{j-i,\hat y})\tag2)
+![](https://latex.codecogs.com/gif.latex?M_{ij}=M(\delta_{j-i,\hat%10x}+\delta_{j-i,\hat%10y})\tag2)
 
 but it doesn't work well in the simulation. So I digged some old papers which discussed the similar model.
 
 In Ref. 3, the SU(n) Hubbard-Heisenberg model can be restored to our SU(2) model when n=2, and the ground state is constructed out by the valence bond state. The normal site-centered charge density wave becomes the bond-centered density wave. However, the nearest neighber state is formed under the condition that n is approching infinity. Those processes that create non-nearest-neighbor bonds have amplitudes which are of order 1/n. The singlet bond operators also correspond to a bond-centered spin-density wave(the Heisenberg exchange term),
 
-![](https://latex.codecogs.com/gif.latex?\langle%10\mid c_{i\sigma}^{\dagger}c_{j\sigma}\mid^2\rangle\propto\langle%10S_i\cdot%10S_j\rangle)
+![](https://latex.codecogs.com/gif.latex?\langle%10\mid%10c_{i\sigma}^{\dagger}c_{j\sigma}\mid^2\rangle\propto\langle%10S_i\cdot%10S_j\rangle)
 
 maybe the order parameter in mean-field calculation should be defined on each bond,
 
