@@ -32,7 +32,7 @@ def para_solver(rho, ein):
 
     i = 1
     isite = ein[i, 0]
-    xsite, ysite = ein[i, 1:]  # direction: y+, x+
+    ysite, xsite = ein[i, 1:]  # direction: y+, x+
     fisite = isite*2
     fxsite = xsite*2
     fysite = ysite*2
@@ -45,7 +45,7 @@ def para_solver(rho, ein):
         rho[fisite, fysite] - rho[fisite+1, fysite+1]
         - rho[fysite, fisite] + rho[fysite+1, fisite+1]
         )/4.0 * get_sign[i]  # i+y
-    para_new = (ydirec)
+    para_new = abs(ydirec)
     if abs(xdirec-ydirec) > 0.1:
         print(xdirec, ydirec, 'N is Not Jerenny: ')
         para_new = (xdirec+ydirec)/2
@@ -177,18 +177,19 @@ def main_cycle(tau, g1, g2, memo, ein):
         para_dic_old = memo[1]  # init M from last iteration
         para_old = memo[2]  # init N from last iteration
 
-    _tau = 100.0 # init error
+    _tau = 100.0  # init error
     count = 0
     while (_tau > tau):
         para_dic_new, para_new, rho = diagonal(ein, para_dic_old, g1, para_old, g2)
-        _tau = np.hstack([abs(para_dic_new - para_dic_old), abs(para_new - para_old)]).max()
-        #print(para_dic_new, para_new)
-        # _tau = abs(para_new-para_old).max()
+        _tau = np.hstack([abs(para_dic_new - para_dic_old), abs(abs(para_new) - abs(para_old))]).max()
+        # print(para_dic_new, para_new)
+        if g1 == 0:
+            _tau = abs(para_new-para_old).max()
         count += 1
         # print(count,':',para_old)
         para_dic_old = para_dic_new
         para_old = para_new
-        if count > 5000:
+        if count > 100:
             print('iterations cutoff: ', count)
             break
     return para_dic_new, para_new, rho
