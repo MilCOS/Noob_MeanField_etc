@@ -1,3 +1,4 @@
+import numpy as np
 # -*- coding: utf-8 -*-
 """
 Created on Thu Nov 16 14:25:46 2017
@@ -6,42 +7,45 @@ Created on Thu Nov 16 14:25:46 2017
 """
 Add square_lattice April 21 2018
 """
-import numpy as np
 
-def sqr_noflux(Row,Col):
+
+def sqr_noflux(Row, Col):
     n = Row*Col
-    con = np.zeros([2*n,2*n],dtype=complex)
+    con = np.zeros([2*n, 2*n], dtype=complex)
     for x in range(Row):
         for y in range(Col):
             i = x*Col + y
 
             xx = x + 1
             yy = y
-            if xx == Row: xx=0
+            if xx == Row:
+                xx = 0
             j = xx*Col + yy
-            if i != j :
-                for f in [0,1]:
-                    con[i*2+f,j*2+f] = -1.0
-                    con[j*2+f,i*2+f] = -1.0
+            if i != j:
+                for f in [0, 1]:
+                    con[i*2+f, j*2+f] = -1.0
+                    con[j*2+f, i*2+f] = -1.0
 
             xx = x
             yy = y + 1
-            if yy == Col: yy=0
+            if yy == Col:
+                yy = 0
             j = xx*Col + yy
-            if i != j :
-                for f in [0,1]:
-                    con[i*2+f,j*2+f] = -1.0
-                    con[j*2+f,i*2+f] = -1.0
+            if i != j:
+                for f in [0, 1]:
+                    con[i*2+f, j*2+f] = -1.0
+                    con[j*2+f, i*2+f] = -1.0
 
     return con
 
-def mn_sqr(Row,Col):
+
+def mn_sqr(Row, Col):
     n = Row*Col
-    pn = np.ones(n,dtype=int)
+    pn = np.ones(n, dtype=int)
     for x in range(Row):
         for y in range(Col):
-            i = x * Col+ y
-            pn[i]=int((-1)**int(x+y))
+            i = x * Col + y
+            pn[i] = int((-1)**int(x+y))
 
     return pn
             

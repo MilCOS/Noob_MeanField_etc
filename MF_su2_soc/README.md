@@ -23,7 +23,7 @@ This represents a flux phase. This phase breaks the parity, translation by one s
 ### 2. Order parameter against doping strength
 ![](./fig/Dope_gtcur.png)
 
-
+---
 The order parameter M is defined in the way,
 
 ![](https://latex.codecogs.com/gif.latex?M_{ij}=\langle%10c_{i\sigma}^{\dagger}c_{j\sigma}+H.c.\rangle)
@@ -34,7 +34,7 @@ and for the mean field order parameter, I chose
 
 but it doesn't work well in the simulation. So I digged some old papers which discussed the similar model.
 
-In Ref. 3, the SU(n) Hubbard-Heisenberg model can be restored to our SU(2) model when n=2, and the ground state is constructed out by the valence bond state. The normal site-centered charge density wave becomes the bond-centered density wave. However, the nearest neighber state is formed under the condition that n is approching infinity. Those processes that create non-nearest-neighbor bonds have amplitudes which are of order 1/n. The singlet bond operators also correspond to a bond-centered spin-density wave(the Heisenberg exchange term),
+In Ref. 3, the SU(n) Hubbard-Heisenberg model can be restored to our SU(2) model when n=2, and the ground state is constructed out by the valence bonds. The normal site-centered charge density wave becomes the bond-centered density wave. However, the nearest neighber state is formed under the condition that n is approching infinity. Those processes that create non-nearest-neighbor bonds have amplitudes which are of order 1/n. The singlet bond operators also correspond to a bond-centered spin-density wave(the Heisenberg exchange term),
 
 ![](https://latex.codecogs.com/gif.latex?\langle%10\mid%10c_{i\sigma}^{\dagger}c_{j\sigma}\mid^2\rangle\propto\langle%10S_i\cdot%10S_j\rangle)
 
@@ -47,3 +47,4 @@ and the new unit cell consists of the four sites at the corners of a square in t
 
 - [你为什么使用 jupyter ，进行分析，而不是用 python 脚本或仅仅利用 excel ？](https://www.zhihu.com/question/37490497)
 - [Git基本操作](http://www.runoob.com/git/git-basic-operations.html)
+- [Emacs: Python最好的编译器？](https://segmentfault.com/a/1190000004165173)
