@@ -37,15 +37,15 @@ def para_solver(rho, ein):
     fxsite = xsite*2
     fysite = ysite*2
 
-    xdirec = -1j*(
+    xdirec = +1j*(
         rho[fisite, fxsite] - rho[fisite+1, fxsite+1]
         - rho[fxsite, fisite] + rho[fxsite+1, fisite+1]
         )/4.0 * get_sign[i]  # i+x
-    ydirec = +1j*(
+    ydirec = -1j*(
         rho[fisite, fysite] - rho[fisite+1, fysite+1]
         - rho[fysite, fisite] + rho[fysite+1, fisite+1]
         )/4.0 * get_sign[i]  # i+y
-    para_new = abs(ydirec)
+    para_new = (ydirec)
     if abs(xdirec-ydirec) > 0.1:
         print(xdirec, ydirec, 'N is Not Jerenny: ')
         para_new = (xdirec+ydirec)/2
@@ -170,7 +170,7 @@ def main_cycle(tau, g1, g2, memo, ein):
     '''
     if memo[0] == 1:
         para_dic_old = abs(np.random.randn(len(memo[1])))  # init para from scartch
-        para_old = (np.random.randn(1))
+        para_old = abs(np.random.randn(1))
         print('para from init:\n', ' M:', para_dic_old, '\n N:', para_old)
     elif memo[0] > 1:
         print('para from last U:', memo[1:])

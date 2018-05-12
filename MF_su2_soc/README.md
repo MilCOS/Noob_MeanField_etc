@@ -17,7 +17,7 @@ The restricted mean-field staggered spin flux order parameter N is defined as
 ![](https://latex.codecogs.com/gif.latex?\vec%10N_{ij}=2×N(-1)^{i_x+i_y}(\delta_{j-i,\hat%10x}-\delta_{j-i,\hat%10y})\hat%10z\tag1)
 
 This represents a flux phase. This phase breaks the parity, translation by one site and conjugation symmetry.
-### 1. Order parameter against interaction strength
+### 1. Order parameter against triplet current interaction strength
 ![](./fig/OP_gtcur.png)
 
 ### 2. Order parameter against doping strength
@@ -43,6 +43,21 @@ maybe the order parameter in mean-field calculation should be defined on each bo
 ![](https://latex.codecogs.com/gif.latex?M_{ij}=(M_x\delta_{j-i,\hat%10x}+M_y\delta_{j-i,\hat%10y})\tag3)
 
 and the new unit cell consists of the four sites at the corners of a square in the origin lattice.
+
+### 3. Order parameter against singlet bond interaction strength
+![](./fig/OP_gsbd.png)
+
+### 4. Order parameter against doping strength
+![](./fig/Dope_gsbd.png)
+
+---
+The next thing is to investigate the order parameter when we vary the ratio of two interaction strength
+
+![](https://latex.codecogs.com/gif.latex?r=\frac{g_{sbd}}{g_{tcur}},g_{tcur}\equiv4)
+
+### 5. Order parameter against ratio r
+![](./fig/OP_gsbd_gtcur.png)
+
 ## Useful advices:
 
 - [你为什么使用 jupyter ，进行分析，而不是用 python 脚本或仅仅利用 excel ？](https://www.zhihu.com/question/37490497)
